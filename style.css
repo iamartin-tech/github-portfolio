@@ -1,0 +1,343 @@
+
+/* ==========================================
+   Ian Martin - Professional Portfolio
+   COSC 4272 Senior Seminar
+   ========================================== */
+
+:root {
+    --background: #0b1220;
+    --surface: #152238;
+    --surface-light: #1d304c;
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --text: #f1f5f9;
+    --muted: #cbd5e1;
+    --border: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* Navigation */
+
+header {
+    background-color: #101b2e;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+nav h2 {
+    color: var(--primary);
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--primary);
+}
+
+/* General Sections */
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+section h2 {
+    color: var(--primary);
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+section h3 {
+    margin: 20px 0 10px;
+    color: var(--text);
+}
+
+section p {
+    margin-bottom: 18px;
+    color: var(--muted);
+}
+
+a {
+    color: var(--primary);
+}
+
+/* Homepage */
+
+.hero {
+    max-width: none;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 25px;
+    background: linear-gradient(
+        135deg,
+        #0b1220 0%,
+        #142b48 55%,
+        #0b1220 100%
+    );
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 70px);
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: var(--primary);
+    font-size: clamp(22px, 4vw, 30px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.button {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: var(--primary);
+    color: #07111e;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
+}
+
+.button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+.button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #facc15;
+    outline-offset: 4px;
+}
+
+/* About Me */
+
+#about {
+    background-color: var(--surface);
+    border-radius: 12px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Resume */
+
+#resume {
+    text-align: center;
+}
+
+#resume .button {
+    margin: 15px 0 30px;
+}
+
+#resume iframe {
+    display: block;
+    width: 100%;
+    min-height: 550px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* Projects */
+
+#projects {
+    padding-top: 70px;
+}
+
+.project-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.project-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    font-size: 23px;
+}
+
+.project-card p {
+    margin-bottom: 12px;
+}
+
+/* Skills */
+
+#skills {
+    background-color: var(--surface);
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#skills h3 {
+    color: var(--primary);
+    margin-top: 25px;
+}
+
+/* Contact */
+
+#contact {
+    text-align: center;
+}
+
+#contact a {
+    overflow-wrap: anywhere;
+}
+
+#contact a:hover {
+    color: #7dd3fc;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background-color: #101b2e;
+    border-top: 1px solid var(--border);
+    padding: 25px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Tablet Layout */
+
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    section {
+        padding: 60px 25px;
+    }
+}
+
+/* Mobile Layout */
+
+@media (max-width: 600px) {
+    nav {
+        padding: 15px;
+    }
+
+    nav h2 {
+        font-size: 21px;
+    }
+
+    nav ul {
+        gap: 10px 15px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 65vh;
+        padding: 75px 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    #resume iframe {
+        min-height: 400px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
