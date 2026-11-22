@@ -341,3 +341,22 @@ footer {
         animation-duration: 0.01ms !important;
     }
 }
+
+
+/* Project screenshots */
+
+.project-screenshot {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    object-fit: contain;
+}
+
+.project-screenshot:hover {
+    opacity: 0.95;
+}
+
